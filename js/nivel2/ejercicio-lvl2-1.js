@@ -29,7 +29,7 @@ function ejercicioDos() {
   //validamos que la op no sea errada o mayor a 4 o menos que 1 operacion === NaN
   if (isNaN(operacion) || operacion > 4 || operacion < 1) {
     return alert("Opción inválida favor ingresar entre 1 y 4");
-  }
+  } 
   //Pedimos los números
   const num1 = parseFloat(prompt("Ingrese numero 1"));
   const num2 = parseFloat(prompt("Ingrese numero 2"));
