@@ -16,8 +16,8 @@
 
 const botonUno = document.getElementById("botonUno");
 
-function isNull(valores) {
-    return valores === null || valores === "";
+function isNull(valor) {
+    return valor === null || valor === "";
   }
 
 function challenge() {

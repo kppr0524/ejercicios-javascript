@@ -2,6 +2,7 @@
 const btnEjercicioUno = document.getElementById("btnEjercicioUno");
 const btnEjercicioDos = document.getElementById("btnEjercicioDos");
 const btnEjercicioTres = document.getElementById("btnEjercicioTres");
+const btnEjercicioCuatro = document.getElementById("btnEjercicioCuatro");
 
 /**
  * Ejercicio 1
@@ -29,15 +30,15 @@ function ejercicioDos() {
   //validamos que la op no sea errada o mayor a 4 o menos que 1 operacion === NaN
   if (isNaN(operacion) || operacion > 4 || operacion < 1) {
     return alert("Opción inválida favor ingresar entre 1 y 4");
-  } 
+  }
   //Pedimos los números
   const num1 = parseFloat(prompt("Ingrese numero 1"));
   const num2 = parseFloat(prompt("Ingrese numero 2"));
   let resultado = 0;
 
   //Validamos que los números no sean errados
-  if(isNaN(num1) || isNaN(num2)) {
-    return alert("Favor ingresar solo números")
+  if (isNaN(num1) || isNaN(num2)) {
+    return alert("Favor ingresar solo números");
   }
 
   //Si todo lo anterior esta OK, hacemos las operaciones matematicas
@@ -59,7 +60,6 @@ function ejercicioDos() {
       alert("El resultado de la división es: " + resultado);
       break;
   }
-
 }
 
 /**
@@ -69,14 +69,14 @@ function ejercicioDos() {
 
 function ejercicioTres() {
   //datos ingresados por el usuario
-  const nombre = prompt("Ingrese su nombre: ")
-  const cedula = prompt("Ingrese su cédula: ")
-  const edad = parseInt(prompt("Ingrese su edad: "))
+  const nombre = prompt("Ingrese su nombre: ");
+  const cedula = prompt("Ingrese su cédula: ");
+  const edad = parseInt(prompt("Ingrese su edad: "));
 
   //Etiquetas H2 o sobrescribir en el html
-  const nombreHTML = document.getElementById("nombre")
-  const cedulaHTML = document.getElementById("cedula")
-  const edadHTML = document.getElementById("edad")
+  const nombreHTML = document.getElementById("nombre");
+  const cedulaHTML = document.getElementById("cedula");
+  const edadHTML = document.getElementById("edad");
 
   //Guardar datos Html
   nombreHTML.innerHTML = "Tu nombre es: " + nombre;
@@ -84,6 +84,46 @@ function ejercicioTres() {
   edadHTML.innerHTML = "Tu edad es: " + edad;
 }
 
+/**
+ * Ejercicio 4
+ * Datos personales
+ */
+
+/*if (!localStorage.getItem("nombre2")) {
+  console.log("entro 1")
+} else {
+  console.log("entro 2");
+}*/
+
+if (localStorage.getItem("nombre2")) {
+  const nombre2HTML = document.getElementById("nombre2");
+  const cedula2HTML = document.getElementById("cedula2");
+  const edad2HTML = document.getElementById("edad2");
+  nombre2HTML.innerHTML = "Tu nombre es: " + localStorage.getItem("nombre2");
+  cedula2HTML.innerHTML = "Tu cédula es: " + localStorage.getItem("cedula2");
+  edad2HTML.innerHTML = "Tu edad es: " + localStorage.getItem("edad2");
+}
+
+function ejercicioCuatro() {
+  //datos ingresados por el usuario
+  const nombre2 = prompt("Ingrese su nombre: ");
+  const cedula2 = prompt("Ingrese su cédula: ");
+  const edad2 = parseInt(prompt("Ingrese su edad: "));
+
+  //Etiquetas H2 o sobrescribir en el html
+  const nombre2HTML = document.getElementById("nombre2");
+  const cedula2HTML = document.getElementById("cedula2");
+  const edad2HTML = document.getElementById("edad2");
+
+  //Guardar datos Html
+  nombre2HTML.innerHTML = "Tu nombre es: " + localStorage.getItem("nombre2");
+  cedula2HTML.innerHTML = "Tu cédula es: " + cedula2;
+  edad2HTML.innerHTML = "Tu edad es: " + edad2;
+
+  localStorage.setItem("nombre2", nombre2);
+  localStorage.setItem("cedula2", cedula2);
+  localStorage.setItem("edad2", edad2);
+}
 
 //Eventos click
 btnEjercicioUno.onclick = function () {
@@ -96,4 +136,8 @@ btnEjercicioDos.onclick = function () {
 
 btnEjercicioTres.onclick = function () {
   ejercicioTres();
+};
+
+btnEjercicioCuatro.onclick = function () {
+  ejercicioCuatro();
 };
